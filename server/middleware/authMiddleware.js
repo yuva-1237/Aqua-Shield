@@ -19,6 +19,12 @@ exports.protect = async (req, res, next) => {
         const currentUser = userDb.findUserById(decoded.id);
 
         if (!currentUser) {
+            // Vercel Serverless uses ephemeral /tmp storage that wipes frequently.
+            // If the JWT is valid but the DB is wiped, reconstruct the session.
+            if (process.env.VERCEL === '1' || process.env.NODE_ENV === 'production') {
+                req.user = { _id: decoded.id, name: 'Vercel User', email: 'demo@aquashield.app' };
+                return next();
+            }
             return res.status(401).json({ error: 'User no longer exists.' });
         }
 

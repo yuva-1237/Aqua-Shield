@@ -112,10 +112,13 @@ async function fetchNews() {
             headers: { 'Authorization': `Bearer ${token}` }
         });
         const data = await res.json();
+        
+        if (!res.ok) throw new Error(data.error || 'Server connection failed');
+        
         newsCache = data.articles || [];
         renderNews(newsCache);
     } catch (err) {
-        feed.innerHTML = `<div class="news-loading" style="color:#ff0055">⚠️ Could not load news stream. Check connection.</div>`;
+        feed.innerHTML = `<div class="news-loading" style="color:#ff0055">⚠️ Could not load news stream: ${err.message}</div>`;
     }
 }
 
