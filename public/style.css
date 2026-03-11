@@ -522,34 +522,39 @@ input:checked + .slider:before { transform: translateX(20px); }
     color: var(--text-dim);
 }
 
-/* Light Mode Support */
+/* Light Mode Support - Premium Glassmorphism */
 body.light-mode {
-    --bg-deep: #f8fafc;
-    --bg-surface: rgba(255, 255, 255, 0.8);
-    --accent-glow: #0072ff;
-    --accent-secondary: #00c6ff;
+    --bg-deep: #f0f4f8;
+    --bg-surface: rgba(255, 255, 255, 0.65);
+    --accent: #0ea5e9;
+    --accent-glow: linear-gradient(135deg, #0ea5e9, #38bdf8);
     --text-main: #0f172a;
-    --text-dim: #64748b;
-}
-
-body.light-mode .card, 
-body.light-mode header,
-body.light-mode .control-panel {
-    background: rgba(255, 255, 255, 0.8);
-    border-color: rgba(0, 0, 0, 0.05);
+    --text-dim: #475569;
+    --panel-glass: rgba(255, 255, 255, 0.85);
+    --border-glass: rgba(255, 255, 255, 0.9);
 }
 
 body.light-mode #three-container {
-    background: radial-gradient(circle at center, #e2e8f0 0%, #f8fafc 100%);
+    background: radial-gradient(circle at center, #edf2f7 0%, #e2e8f0 100%);
 }
 
-body.light-mode .metric,
-body.light-mode .toggle-item,
-body.light-mode .mode-btn,
-body.light-mode .season-btn {
-    background: rgba(0, 0, 0, 0.03);
+/* Specific light mode tweaks for contrast */
+body.light-mode .search-bar input {
     color: var(--text-main);
-    border-color: rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+body.light-mode .search-bar input::placeholder {
+    color: var(--text-dim);
+}
+
+body.light-mode .btn-glow {
+    color: white; /* Keep text white on the vibrant blue button */
+}
+
+body.light-mode .card, 
+body.light-mode .control-panel {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
 /* Modal Styling */
