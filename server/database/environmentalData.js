@@ -1,15 +1,30 @@
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 
-const DB_PATH = path.join(__dirname, 'environmental_db.json');
+let DB_PATH = path.join(__dirname, 'environmental_db.json');
 
 const initDB = () => {
-    if (!fs.existsSync(DB_PATH)) {
-        fs.writeFileSync(DB_PATH, JSON.stringify({
-            history: [],
-            alerts: [],
-            projections: {}
-        }, null, 2));
+    try {
+        if (!fs.existsSync(DB_PATH)) {
+            fs.writeFileSync(DB_PATH, JSON.stringify({
+                history: [],
+                alerts: [],
+                projections: {}
+            }, null, 2));
+        }
+        // Test write to ensure it's not a deceptive silent fail on read-only mount
+        fs.appendFileSync(DB_PATH, '');
+    } catch (error) {
+        console.log('[AquaShield DB] Read-only filesystem detected. Migrating Environmental DB to OS Temporary Directory.');
+        DB_PATH = path.join(os.tmpdir(), 'environmental_db.json');
+        if (!fs.existsSync(DB_PATH)) {
+            fs.writeFileSync(DB_PATH, JSON.stringify({
+                history: [],
+                alerts: [],
+                projections: {}
+            }, null, 2));
+        }
     }
 };
 
