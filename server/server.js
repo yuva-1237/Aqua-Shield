@@ -60,6 +60,10 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
-server.listen(PORT, () => {
-  console.log(`AquaShield Intelligence Server running at http://localhost:${PORT}`);
-});
+if (process.env.VERCEL !== '1') {
+  server.listen(PORT, () => {
+    console.log(`AquaShield Intelligence Server running at http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
