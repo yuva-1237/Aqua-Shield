@@ -117,4 +117,14 @@ const logout = () => {
 // Expose logout to window
 window.logout = logout;
 
-document.addEventListener('DOMContentLoaded', checkAuth);
+// Check theme preference
+const checkTheme = () => {
+    if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-mode');
+    }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    checkAuth();
+    checkTheme();
+});

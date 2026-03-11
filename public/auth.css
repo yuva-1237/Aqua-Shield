@@ -10,6 +10,20 @@
     --glass-border: rgba(255, 255, 255, 0.1);
 }
 
+body.light-mode {
+    --bg-deep: #f0f4f8;
+    --accent-glow: #0ea5e9;
+    --accent-blue: #38bdf8;
+    --text-pure: #0f172a;
+    --text-dim: #475569;
+    --glass: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.9);
+}
+
+body.light-mode .auth-background {
+    background: radial-gradient(circle at 50% 50%, #edf2f7 0%, #e2e8f0 100%);
+}
+
 * {
     margin: 0;
     padding: 0;

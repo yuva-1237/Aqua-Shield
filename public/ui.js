@@ -4,6 +4,15 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initEnvControl();
+    
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        setTheme(savedTheme);
+        // Only update buttons if they exist on the page
+        if (typeof updateModeButtons === 'function') {
+            updateModeButtons(savedTheme);
+        }
+    }
 });
 
 function initEnvControl() {
@@ -267,6 +276,8 @@ function updateSeasonButtons(activeSeason) {
 }
 
 function setTheme(mode) {
+    localStorage.setItem('theme', mode);
+    
     if (mode === 'light') {
         document.body.classList.add('light-mode');
     } else {
