@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaShield | Sign Up</title>
+    <link rel="stylesheet" href="auth.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <div class="auth-background"></div>
+    
+    <div class="auth-container">
+        <div class="auth-header">
+            <h1 class="auth-logo">AquaShield</h1>
+            <p class="auth-subtitle">Create Intelligence Account</p>
+        </div>
+
+        <form id="signup-form">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" required placeholder="John Doe">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required placeholder="name@example.com">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required placeholder="Min. 8 characters">
+            </div>
+
+            <div class="form-group">
+                <label for="passwordConfirm">Confirm Password</label>
+                <input type="password" id="passwordConfirm" required placeholder="••••••••">
+            </div>
+
+            <button type="submit" class="auth-btn" id="signup-btn">CREATE SECURE ACCOUNT</button>
+            <div id="general-error" class="error-message" style="text-align: center;"></div>
+        </form>
+
+        <div class="auth-footer">
+            Already have an account? <a href="login.html">Log In</a>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.from('.auth-container', { 
+                opacity: 0, 
+                y: 30, 
+                duration: 1.2, 
+                ease: 'power3.out' 
+            });
+            gsap.from('.auth-header', { opacity: 0, delay: 0.5, duration: 1 });
+            gsap.from('.form-group', { opacity: 0, y: 10, stagger: 0.1, delay: 0.7, duration: 0.8 });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaShield | Coastal & Climate Risk Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="news.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader"></div>
+        <p>Initializing Climate Intelligence System...</p>
+    </div>
+
+    <div id="three-container"></div>
+
+    <main id="dashboard" class="hidden">
+        <header>
+            <div class="logo">
+                <span class="icon">🌍</span>
+                <h1>AquaShield <small>v2.0</small></h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="city-input" placeholder="Enter city for climate analysis...">
+                <button id="search-btn">Analyze Risk</button>
+            </div>
+            <div class="auth-controls" style="display: flex; gap: 1rem; align-items: center;">
+                <span id="user-display" style="font-size: 0.8rem; color: var(--text-dim);"></span>
+                <button onclick="logout()" style="background: rgba(255, 71, 87, 0.2); border: 1px solid #ff4757; color: #ff4757; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; font-size: 0.8rem; font-weight: 600;">LOGOUT</button>
+            </div>
+            <div class="header-alerts">
+                <div id="critical-alert" class="alert-banner hidden">⚠️ CRITICAL CLIMATE CRISIS WARNING</div>
+            </div>
+        </header>
+
+        <section class="grid-content">
+            <!-- Left Panel: Real-time & Risk -->
+            <div class="panel left">
+                <div class="card weather-data">
+                    <h3><span class="icon">🛰️</span> Monitoring Dashboard</h3>
+                    <div class="metrics-grid">
+                        <div class="metric">
+                            <span class="label">Temp Anomaly</span>
+                            <span id="temp-val" class="value">--</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Flood Prob.</span>
+                            <span id="flood-val" class="value">--</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Heat Risk</span>
+                            <span id="heat-val" class="value">--</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Ocean Health</span>
+                            <span id="ocean-val" class="value">--</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card risk-analysis">
+                    <h3><span class="icon">⚖️</span> Risk Assessments</h3>
+                    <div class="risk-segments">
+                        <div class="segment">
+                            <label>Coastal Flood</label>
+                            <div class="bar-bg"><div id="flood-bar" class="bar"></div></div>
+                        </div>
+                        <div class="segment">
+                            <label>Inland Climate</label>
+                            <div class="bar-bg"><div id="climate-bar" class="bar"></div></div>
+                        </div>
+                        <div class="segment">
+                            <label>Marine Ecosystem</label>
+                            <div class="bar-bg"><div id="aquatic-bar" class="bar"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card future-outlook">
+                    <h3><span class="icon">📅</span> 2026 – 2050 Projections</h3>
+                    <div class="chart-container">
+                        <canvas id="projectionChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- New Widget Slot: Coastal Hazards -->
+                <div class="card hazards-widget">
+                    <h3><span class="icon">🏘️</span> Coastal Hazards</h3>
+                    <div id="hazards-display" class="widget-internal">
+                        <div class="hazard-item">Tsunami Warning: <span id="tsunami-status">STANDBY</span></div>
+                        <div class="hazard-item">Storm Surge: <span id="surge-val">--</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center Panel: Visualization -->
+            <div class="panel center">
+                <div class="card map-view">
+                    <h3><span class="icon">🗺️</span> Geographic Risk Zones</h3>
+                    <div id="map"></div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Global Warming & Details -->
+            <div class="panel right">
+                <div class="card sea-level">
+                    <h3><span class="icon">🌊</span> Sea Level Rise</h3>
+                    <div class="sl-details">
+                        <div class="sl-gauge">
+                            <div id="sl-indicator" class="sl-fill"></div>
+                        </div>
+                        <div class="sl-metrics">
+                            <div class="m"><span>2050 Increase</span><strong id="sl-2050">--</strong></div>
+                            <div class="m"><span>Land Loss</span><strong id="land-loss">--</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="community-reports" class="card">
+                    <h3><span class="icon">👥</span> Community Intel</h3>
+                    <div id="reports-list" class="widget-internal">
+                        <p class="empty-msg" style="font-size:0.7rem; color:var(--text-dim); text-align:center; padding:1rem;">Waiting for citizen data...</p>
+                    </div>
+                    <button id="open-report-btn" class="secondary-btn" style="margin-top:0.5rem; width:100%; font-size:0.75rem;">SUBMIT REPORT</button>
+                </div>
+
+                <div class="card aquatic-ecosystem">
+                    <h3><span class="icon">🐠</span> Aquatic Bio-Health</h3>
+                    <div id="aquatic-status" class="status-box healthy">
+                        <span class="status-label">Current State</span>
+                        <h4 id="eco-category">Analyzing...</h4>
+                        <p id="eco-desc">Status data stream pending search.</p>
+                    </div>
+                </div>
+
+                <div class="card alerts-panel">
+                    <h3><span class="icon">🔔</span> Intelligence Alerts</h3>
+                    <div id="alerts-list" class="alerts-container">
+                        <div class="empty-msg">No active critical alerts.</div>
+                    </div>
+                </div>
+
+                <!-- New Widget Slot: Marine Health Details -->
+                <div class="card health-widget">
+                    <h3><span class="icon">🧴</span> Marine Pollutants</h3>
+                    <div id="pollution-display" class="widget-internal">
+                        <div class="p-meter">Plastic Index: <span id="plastic-idx">--</span></div>
+                        <div class="p-meter">Bio-Diversity: <span id="bio-idx">--</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Timeline Slider -->
+        <section id="timeline-container">
+            <div class="timeline-inner">
+                <div class="timeline-labels">
+                    <span>2026</span>
+                    <span id="current-year-display">PRESENT</span>
+                    <span>2050</span>
+                </div>
+                <input type="range" id="time-slider" min="2026" max="2050" value="2026" list="year-markers">
+                <datalist id="year-markers">
+                    <option value="2026"></option>
+                    <option value="2030"></option>
+                    <option value="2035"></option>
+                    <option value="2040"></option>
+                    <option value="2045"></option>
+                    <option value="2050"></option>
+                </datalist>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Environment Control Button -->
+    <div id="env-fab-ring" class="fab-ring-env"></div>
+    <button id="env-control-btn" class="floating-btn">
+        <span class="icon">⚙️</span>
+        <span class="tooltip">Environment Controls</span>
+    </button>
+
+    <!-- Environment Control Panel -->
+    <div id="env-panel" class="control-panel side-panel hidden">
+        <div class="panel-header">
+            <h3>🌍 Environment Control</h3>
+            <button id="close-env-panel" class="close-btn">&times;</button>
+        </div>
+        
+        <div class="panel-body">
+            <!-- Theme Section -->
+            <section class="control-section">
+                <h4>🌗 Theme & Appearance</h4>
+                <div class="control-group">
+                    <button class="mode-btn active" data-mode="dark">Dark Mode</button>
+                    <button class="mode-btn" data-mode="light">Light Mode</button>
+                </div>
+            </section>
+
+            <!-- Seasonal Section -->
+            <section class="control-section">
+                <h4>📅 Seasonal Simulation</h4>
+                <div class="control-group">
+                    <button class="season-btn" data-season="summer">Summer</button>
+                    <button class="season-btn active" data-season="monsoon">Monsoon</button>
+                    <button class="season-btn" data-season="winter">Winter</button>
+                </div>
+            </section>
+
+            <!-- Weather Layers Section -->
+            <section class="control-section">
+                <h4>🌦️ Weather Layers</h4>
+                <div class="toggle-list">
+                    <div class="toggle-item">
+                        <span>Wind Speed</span>
+                        <label class="switch"><input type="checkbox" id="layer-wind"><span class="slider"></span></label>
+                    </div>
+                    <div class="toggle-item">
+                        <span>Temperature</span>
+                        <label class="switch"><input type="checkbox" id="layer-temp"><span class="slider"></span></label>
+                    </div>
+                    <div class="toggle-item">
+                        <span>Humidity</span>
+                        <label class="switch"><input type="checkbox" id="layer-humidity"><span class="slider"></span></label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Simulation Controls -->
+            <section class="control-section">
+                <h4>⚠️ Climate Simulation</h4>
+                <div class="toggle-list">
+                    <div class="toggle-item">
+                        <span>Sea Level Rise</span>
+                        <label class="switch"><input type="checkbox" id="sim-slr"><span class="slider"></span></label>
+                    </div>
+                    <div class="toggle-item">
+                        <span>Coastal Flood Risk</span>
+                        <label class="switch"><input type="checkbox" id="sim-flood"><span class="slider"></span></label>
+                    </div>
+                    <div class="toggle-item">
+                        <span>Tsunami Warning</span>
+                        <button id="trigger-tsunami" style="padding:4px 8px; border-radius:6px; background:var(--danger); color:white; border:none; cursor:pointer; font-size:0.7rem;">TRIGGER</button>
+                    </div>
+                    <div class="toggle-item">
+                        <span>Erosion Map</span>
+                        <label class="switch"><input type="checkbox" id="sim-erosion"><span class="slider"></span></label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Storm Surge Intensity -->
+            <section class="control-section">
+                <h4>🌊 Storm Surge Intensity</h4>
+                <input type="range" id="surge-range" min="0" max="100" value="10">
+                <div class="range-labels">
+                    <span>Low</span>
+                    <span>High</span>
+                </div>
+            </section>
+
+            <!-- Marine Monitoring Section -->
+            <section class="control-section">
+                <h4>🐠 Marine Health Monitoring</h4>
+                <div class="toggle-list">
+                    <div class="toggle-item">
+                        <span>Coral Heatmap (3D)</span>
+                        <label class="switch"><input type="checkbox" id="layer-coral"><span class="slider"></span></label>
+                    </div>
+                    <div class="toggle-item">
+                        <span>Plastic Waste</span>
+                        <label class="switch"><input type="checkbox" id="layer-plastic"><span class="slider"></span></label>
+                    </div>
+                    <div class="toggle-item">
+                        <span>Oil Spill Tracking</span>
+                        <label class="switch"><input type="checkbox" id="layer-oil"><span class="slider"></span></label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Rain Intensity -->
+            <section class="control-section">
+                <h4>🌧️ Rain Intensity</h4>
+                <input type="range" id="rain-range" min="0" max="100" value="30">
+                <div class="range-labels">
+                    <span>Off</span>
+                    <span>Light</span>
+                    <span>Heavy</span>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Citizen Reporting Modal -->
+    <div id="report-modal" class="modal hidden">
+        <div class="modal-content glass-card">
+            <h3>📢 Submit Coastal Intelligence</h3>
+            <p style="font-size:0.8rem; margin-bottom:1rem; color:var(--text-dim);">Your data directly informs the AI Risk Agents.</p>
+            <form id="report-form">
+                <select id="report-type" class="glass-input">
+                    <option value="tide">Unusual High Tide</option>
+                    <option value="plastic">Large Plastic Accumulation</option>
+                    <option value="oil">Potential Oil Slick</option>
+                    <option value="coral">Visible Coral Bleaching</option>
+                </select>
+                <textarea id="report-desc" class="glass-input" placeholder="Describe the event..." rows="3"></textarea>
+                <div class="modal-actions">
+                    <button type="button" id="close-modal" class="secondary-btn">CANCEL</button>
+                    <button type="submit" class="primary-btn">SUBMIT TO SYSTEM</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Voice Command Feedback -->
+    <div id="voice-indicator" class="hidden">
+        <span class="pulse-dot"></span>
+        <p id="voice-transcript">Listening for commands...</p>
+    </div>
+
+    <!-- Dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Modules -->
+    <script src="threeScene.js"></script>
+    <script src="map.js"></script>
+    <script src="charts.js"></script>
+    <script src="auth.js"></script>
+    <script src="main.js"></script>
+    <script src="newsPanel.js"></script>
+    <script src="ui.js"></script>
+</body>
+</html>

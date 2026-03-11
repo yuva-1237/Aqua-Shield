@@ -1,0 +1,780 @@
+{
+  "history": [
+    {
+      "city": "Miami",
+      "temp": 26.1,
+      "precip": 0,
+      "wind": 19.8,
+      "pressure": 1020,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-10T23:32:18.985Z"
+    },
+    {
+      "city": "Manila",
+      "temp": 25.2,
+      "precip": 0,
+      "wind": 7.9,
+      "pressure": 1013,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-10T23:32:19.375Z"
+    },
+    {
+      "city": "London",
+      "temp": 10.2,
+      "precip": 0,
+      "wind": 21.2,
+      "pressure": 1008,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-10T23:32:19.597Z"
+    },
+    {
+      "city": "Chennai",
+      "temp": 25,
+      "precip": 0,
+      "wind": 6.1,
+      "pressure": 1012,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-10T23:32:20.157Z"
+    },
+    {
+      "city": "Miami",
+      "temp": 26.1,
+      "precip": 0,
+      "wind": 19.8,
+      "pressure": 1020,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-10T23:37:18.930Z"
+    },
+    {
+      "city": "Manila",
+      "temp": 24.2,
+      "precip": 0,
+      "wind": 7.9,
+      "pressure": 1013,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-10T23:37:19.466Z"
+    },
+    {
+      "city": "London",
+      "temp": 10.2,
+      "precip": 0,
+      "wind": 21.2,
+      "pressure": 1009,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-10T23:37:19.997Z"
+    },
+    {
+      "city": "Chennai",
+      "temp": 25,
+      "precip": 0,
+      "wind": 6.1,
+      "pressure": 1012,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-10T23:37:20.538Z"
+    },
+    {
+      "city": "Miami",
+      "temp": 26.1,
+      "precip": 0,
+      "wind": 19.8,
+      "pressure": 1020,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-10T23:42:15.523Z"
+    },
+    {
+      "city": "Manila",
+      "temp": 24.2,
+      "precip": 0,
+      "wind": 7.9,
+      "pressure": 1013,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-10T23:42:16.915Z"
+    },
+    {
+      "city": "London",
+      "temp": 10.2,
+      "precip": 0,
+      "wind": 21.2,
+      "pressure": 1009,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-10T23:42:17.401Z"
+    },
+    {
+      "city": "Chennai",
+      "temp": 25.1,
+      "precip": 0,
+      "wind": 7.9,
+      "pressure": 1012,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-10T23:42:17.966Z"
+    },
+    {
+      "city": "Miami",
+      "temp": 26.1,
+      "precip": 0,
+      "wind": 19.8,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-10T23:54:14.001Z"
+    },
+    {
+      "city": "Manila",
+      "temp": 25.2,
+      "precip": 0,
+      "wind": 7.9,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-10T23:54:14.826Z"
+    },
+    {
+      "city": "London",
+      "temp": 10.2,
+      "precip": 0,
+      "wind": 21.2,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-10T23:54:15.314Z"
+    },
+    {
+      "city": "Chennai",
+      "temp": 25.1,
+      "precip": 0,
+      "wind": 7.9,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-10T23:54:15.877Z"
+    },
+    {
+      "type": "flood",
+      "score": 2.8,
+      "category": "Low",
+      "city": "barcelona",
+      "timestamp": "2026-03-10T23:56:37.379Z"
+    },
+    {
+      "type": "climate",
+      "score": 11.4,
+      "category": "Low",
+      "city": "barcelona",
+      "timestamp": "2026-03-10T23:56:37.392Z"
+    },
+    {
+      "type": "aquatic",
+      "score": 20.1,
+      "classification": "Healthy Ecosystem",
+      "city": "barcelona",
+      "timestamp": "2026-03-10T23:56:37.398Z"
+    },
+    {
+      "type": "flood",
+      "score": 2.8,
+      "category": "Low",
+      "city": "barcelona",
+      "timestamp": "2026-03-10T23:56:40.040Z"
+    },
+    {
+      "type": "climate",
+      "score": 11.4,
+      "category": "Low",
+      "city": "barcelona",
+      "timestamp": "2026-03-10T23:56:40.043Z"
+    },
+    {
+      "type": "aquatic",
+      "score": 20.1,
+      "classification": "Healthy Ecosystem",
+      "city": "barcelona",
+      "timestamp": "2026-03-10T23:56:40.046Z"
+    },
+    {
+      "type": "flood",
+      "score": 2.8,
+      "category": "Low",
+      "city": "barcelona",
+      "timestamp": "2026-03-10T23:56:41.540Z"
+    },
+    {
+      "type": "climate",
+      "score": 11.4,
+      "category": "Low",
+      "city": "barcelona",
+      "timestamp": "2026-03-10T23:56:41.545Z"
+    },
+    {
+      "type": "aquatic",
+      "score": 20.1,
+      "classification": "Healthy Ecosystem",
+      "city": "barcelona",
+      "timestamp": "2026-03-10T23:56:41.549Z"
+    },
+    {
+      "type": "flood",
+      "score": 2.8,
+      "category": "Low",
+      "city": "barcelona",
+      "timestamp": "2026-03-10T23:56:42.798Z"
+    },
+    {
+      "type": "climate",
+      "score": 11.4,
+      "category": "Low",
+      "city": "barcelona",
+      "timestamp": "2026-03-10T23:56:42.804Z"
+    },
+    {
+      "type": "aquatic",
+      "score": 20.1,
+      "classification": "Healthy Ecosystem",
+      "city": "barcelona",
+      "timestamp": "2026-03-10T23:56:42.819Z"
+    },
+    {
+      "type": "flood",
+      "score": 2.8,
+      "category": "Low",
+      "city": "barcelona",
+      "timestamp": "2026-03-10T23:57:50.231Z"
+    },
+    {
+      "type": "climate",
+      "score": 11.4,
+      "category": "Low",
+      "city": "barcelona",
+      "timestamp": "2026-03-10T23:57:50.236Z"
+    },
+    {
+      "type": "aquatic",
+      "score": 20.1,
+      "classification": "Healthy Ecosystem",
+      "city": "barcelona",
+      "timestamp": "2026-03-10T23:57:50.239Z"
+    },
+    {
+      "type": "flood",
+      "score": 2.8,
+      "category": "Low",
+      "city": "barcelona",
+      "timestamp": "2026-03-10T23:57:53.846Z"
+    },
+    {
+      "type": "climate",
+      "score": 11.4,
+      "category": "Low",
+      "city": "barcelona",
+      "timestamp": "2026-03-10T23:57:53.849Z"
+    },
+    {
+      "type": "aquatic",
+      "score": 20.1,
+      "classification": "Healthy Ecosystem",
+      "city": "barcelona",
+      "timestamp": "2026-03-10T23:57:53.857Z"
+    },
+    {
+      "type": "flood",
+      "score": 2.8,
+      "category": "Low",
+      "city": "barcelona",
+      "timestamp": "2026-03-11T00:04:05.823Z"
+    },
+    {
+      "type": "climate",
+      "score": 11.4,
+      "category": "Low",
+      "city": "barcelona",
+      "timestamp": "2026-03-11T00:04:05.832Z"
+    },
+    {
+      "type": "aquatic",
+      "score": 20.1,
+      "classification": "Healthy Ecosystem",
+      "city": "barcelona",
+      "timestamp": "2026-03-11T00:04:05.838Z"
+    },
+    {
+      "type": "flood",
+      "score": 2.5,
+      "category": "Low",
+      "city": "chennai",
+      "timestamp": "2026-03-11T00:04:12.129Z"
+    },
+    {
+      "type": "climate",
+      "score": 6.7,
+      "category": "Low",
+      "city": "chennai",
+      "timestamp": "2026-03-11T00:04:12.137Z"
+    },
+    {
+      "type": "aquatic",
+      "score": 25,
+      "classification": "Healthy Ecosystem",
+      "city": "chennai",
+      "timestamp": "2026-03-11T00:04:12.144Z"
+    },
+    {
+      "type": "flood",
+      "score": 2.5,
+      "category": "Low",
+      "city": "chennai",
+      "timestamp": "2026-03-11T00:04:41.610Z"
+    },
+    {
+      "type": "climate",
+      "score": 6.7,
+      "category": "Low",
+      "city": "chennai",
+      "timestamp": "2026-03-11T00:04:41.619Z"
+    },
+    {
+      "type": "aquatic",
+      "score": 25,
+      "classification": "Healthy Ecosystem",
+      "city": "chennai",
+      "timestamp": "2026-03-11T00:04:41.633Z"
+    },
+    {
+      "city": "Miami",
+      "temp": 25.6,
+      "precip": 0,
+      "wind": 20.9,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:07:36.971Z"
+    },
+    {
+      "city": "Manila",
+      "temp": 25.1,
+      "precip": 0,
+      "wind": 7.9,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:07:37.525Z"
+    },
+    {
+      "city": "London",
+      "temp": 10.2,
+      "precip": 0.13,
+      "wind": 24.8,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:07:38.093Z"
+    },
+    {
+      "city": "Chennai",
+      "temp": 25.1,
+      "precip": 0,
+      "wind": 7.9,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:07:38.188Z"
+    },
+    {
+      "type": "flood",
+      "score": 2.5,
+      "category": "Low",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:07:44.999Z"
+    },
+    {
+      "type": "climate",
+      "score": 6.7,
+      "category": "Low",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:07:45.004Z"
+    },
+    {
+      "type": "aquatic",
+      "score": 25,
+      "classification": "Healthy Ecosystem",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:07:45.008Z"
+    },
+    {
+      "city": "Miami",
+      "temp": 25.6,
+      "precip": 0,
+      "wind": 20.9,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:12:36.430Z"
+    },
+    {
+      "city": "Manila",
+      "temp": 25.1,
+      "precip": 0,
+      "wind": 9,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:12:36.988Z"
+    },
+    {
+      "city": "London",
+      "temp": 10.2,
+      "precip": 0.13,
+      "wind": 24.8,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:12:37.373Z"
+    },
+    {
+      "city": "Chennai",
+      "temp": 25.1,
+      "precip": 0,
+      "wind": 7.9,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:12:37.615Z"
+    },
+    {
+      "type": "flood",
+      "score": 2.5,
+      "category": "Low",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:13:01.783Z"
+    },
+    {
+      "type": "climate",
+      "score": 6.7,
+      "category": "Low",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:13:01.787Z"
+    },
+    {
+      "type": "aquatic",
+      "score": 25,
+      "classification": "Healthy Ecosystem",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:13:01.791Z"
+    },
+    {
+      "type": "flood",
+      "score": 2.5,
+      "category": "Low",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:13:03.134Z"
+    },
+    {
+      "type": "climate",
+      "score": 6.7,
+      "category": "Low",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:13:03.136Z"
+    },
+    {
+      "type": "aquatic",
+      "score": 25,
+      "classification": "Healthy Ecosystem",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:13:03.140Z"
+    },
+    {
+      "type": "flood",
+      "score": 2.5,
+      "category": "Low",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:13:04.099Z"
+    },
+    {
+      "type": "climate",
+      "score": 6.7,
+      "category": "Low",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:13:04.103Z"
+    },
+    {
+      "type": "aquatic",
+      "score": 25,
+      "classification": "Healthy Ecosystem",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:13:04.112Z"
+    },
+    {
+      "type": "flood",
+      "score": 2.5,
+      "category": "Low",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:13:04.873Z"
+    },
+    {
+      "type": "climate",
+      "score": 6.7,
+      "category": "Low",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:13:04.879Z"
+    },
+    {
+      "type": "aquatic",
+      "score": 25,
+      "classification": "Healthy Ecosystem",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:13:04.887Z"
+    },
+    {
+      "type": "flood",
+      "score": 2.5,
+      "category": "Low",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:13:05.643Z"
+    },
+    {
+      "type": "climate",
+      "score": 6.7,
+      "category": "Low",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:13:05.648Z"
+    },
+    {
+      "type": "aquatic",
+      "score": 25,
+      "classification": "Healthy Ecosystem",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:13:05.653Z"
+    },
+    {
+      "type": "flood",
+      "score": 2.5,
+      "category": "Low",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:13:06.403Z"
+    },
+    {
+      "type": "climate",
+      "score": 6.7,
+      "category": "Low",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:13:06.408Z"
+    },
+    {
+      "type": "aquatic",
+      "score": 25,
+      "classification": "Healthy Ecosystem",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:13:06.412Z"
+    },
+    {
+      "type": "flood",
+      "score": 2.5,
+      "category": "Low",
+      "city": "chennai",
+      "timestamp": "2026-03-11T00:13:10.803Z"
+    },
+    {
+      "type": "climate",
+      "score": 6.7,
+      "category": "Low",
+      "city": "chennai",
+      "timestamp": "2026-03-11T00:13:10.812Z"
+    },
+    {
+      "type": "aquatic",
+      "score": 25,
+      "classification": "Healthy Ecosystem",
+      "city": "chennai",
+      "timestamp": "2026-03-11T00:13:10.819Z"
+    },
+    {
+      "type": "flood",
+      "score": 2.5,
+      "category": "Low",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:14:07.775Z"
+    },
+    {
+      "type": "climate",
+      "score": 6.7,
+      "category": "Low",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:14:07.783Z"
+    },
+    {
+      "type": "aquatic",
+      "score": 25,
+      "classification": "Healthy Ecosystem",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:14:07.786Z"
+    },
+    {
+      "type": "flood",
+      "score": 2.5,
+      "category": "Low",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:20:58.418Z"
+    },
+    {
+      "type": "climate",
+      "score": 6.3,
+      "category": "Low",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:20:58.426Z"
+    },
+    {
+      "type": "aquatic",
+      "score": 24.6,
+      "classification": "Healthy Ecosystem",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:20:58.429Z"
+    },
+    {
+      "type": "flood",
+      "score": 2.5,
+      "category": "Low",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:24:01.107Z"
+    },
+    {
+      "type": "climate",
+      "score": 6.3,
+      "category": "Low",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:24:01.118Z"
+    },
+    {
+      "type": "aquatic",
+      "score": 24.6,
+      "classification": "Healthy Ecosystem",
+      "city": "Chennai",
+      "timestamp": "2026-03-11T00:24:01.122Z"
+    },
+    {
+      "city": "Miami",
+      "temp": 25.6,
+      "precip": 0,
+      "wind": 20.9,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:24:38.526Z"
+    },
+    {
+      "city": "Manila",
+      "temp": 25.1,
+      "precip": 0,
+      "wind": 9,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:24:39.066Z"
+    },
+    {
+      "city": "London",
+      "temp": 10.3,
+      "precip": 0.13,
+      "wind": 24.8,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:24:39.456Z"
+    },
+    {
+      "city": "Chennai",
+      "temp": 23.9,
+      "precip": 0,
+      "wind": 7.9,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:24:39.528Z"
+    },
+    {
+      "city": "Miami",
+      "temp": 25.6,
+      "precip": 0,
+      "wind": 20.9,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:29:38.495Z"
+    },
+    {
+      "city": "Manila",
+      "temp": 25.1,
+      "precip": 0,
+      "wind": 9,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:29:39.054Z"
+    },
+    {
+      "city": "London",
+      "temp": 10.3,
+      "precip": 0.13,
+      "wind": 24.8,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:29:39.584Z"
+    },
+    {
+      "city": "Chennai",
+      "temp": 25.1,
+      "precip": 0,
+      "wind": 7.9,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:29:40.135Z"
+    },
+    {
+      "city": "Miami",
+      "temp": 25.6,
+      "precip": 0,
+      "wind": 20.9,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:34:38.671Z"
+    },
+    {
+      "city": "Manila",
+      "temp": 24.9,
+      "precip": 0,
+      "wind": 9,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:34:39.252Z"
+    },
+    {
+      "city": "London",
+      "temp": 10.3,
+      "precip": 0.13,
+      "wind": 24.8,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:34:39.839Z"
+    },
+    {
+      "city": "Chennai",
+      "temp": 23.9,
+      "precip": 0,
+      "wind": 7.9,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:34:40.412Z"
+    },
+    {
+      "city": "Miami",
+      "temp": 25.6,
+      "precip": 0,
+      "wind": 20.9,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:39:38.614Z"
+    },
+    {
+      "city": "Manila",
+      "temp": 24.9,
+      "precip": 0,
+      "wind": 9,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:39:39.485Z"
+    },
+    {
+      "city": "London",
+      "temp": 10.3,
+      "precip": 0.13,
+      "wind": 24.8,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:39:40.014Z"
+    },
+    {
+      "city": "Chennai",
+      "temp": 23.9,
+      "precip": 0,
+      "wind": 7.9,
+      "type": "auto_ingest",
+      "timestamp": "2026-03-11T00:39:40.233Z"
+    }
+  ],
+  "alerts": [
+    {
+      "type": "Flood Warning",
+      "message": "Critical Coastal Flood Warning for TestCity",
+      "severity": "CRITICAL",
+      "city": "TestCity",
+      "timestamp": "2026-03-10T20:29:45.901Z"
+    },
+    {
+      "type": "Fishermen Alert",
+      "message": "Severe flood conditions – advise fishermen to avoid open waters near TestCity",
+      "severity": "WARNING",
+      "city": "TestCity",
+      "timestamp": "2026-03-10T20:29:45.913Z"
+    },
+    {
+      "type": "Aircraft Alert",
+      "message": "Extreme weather – restrict low‑altitude flights over TestCity",
+      "severity": "WARNING",
+      "city": "TestCity",
+      "timestamp": "2026-03-10T20:29:45.916Z"
+    }
+  ],
+  "projections": {}
+}
